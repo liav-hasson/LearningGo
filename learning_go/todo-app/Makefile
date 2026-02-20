@@ -11,9 +11,11 @@ export PATH := /c/Program Files/Go/bin:$(PATH)
 # Build for Windows (adds .exe automatically)
 windows:
 	GOOS=windows GOARCH=amd64 go build -o $(BINARY_NAME).exe $(CMD_DIR)
+	@echo "Created Windows executable!"
 
 linux:
 	GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME)-linux $(CMD_DIR)
+	@echo "Created Linux executable!"
 
 build-all: windows linux
 

@@ -2,7 +2,10 @@ module todo-app
 
 go 1.25.0
 
-require github.com/charmbracelet/bubbletea v1.3.10
+require (
+	github.com/charmbracelet/bubbletea v1.3.10
+	github.com/mattn/go-sqlite3 v1.14.34
+)
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect

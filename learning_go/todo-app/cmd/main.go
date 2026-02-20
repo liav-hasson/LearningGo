@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
 
 	"todo-app/internal"
@@ -10,9 +10,16 @@ import (
 )
 
 func main() {
-	p := tea.NewProgram(internal.InitialModel())
+	store := &internal.Store{}
+	if err := store.Init(); err != nil {
+		log.Fatalf("Unable to init store: %v", err)
+	}
+
+	m := internal.NewModel(store)
+
+	p := tea.NewProgram(m)
 	if _, err := p.Run(); err != nil {
-		fmt.Printf("Alas, there's been an error: %v", err)
+		log.Fatalf("Unable to run CLI app: %v", err)
 		os.Exit(1)
 	}
 }

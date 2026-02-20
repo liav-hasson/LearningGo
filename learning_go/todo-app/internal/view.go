@@ -22,7 +22,10 @@ func (m model) View() string {
 		}
 
 		// Render the row
-		s += fmt.Sprintf("%s [%s] %v\n", cursor, checked, task)
+		s += fmt.Sprintf("%s [%s] Task %d: %s | Starts: %s | Ends: %s\n \t- %s\n\n",
+			cursor, checked, task.ID, task.Title, task.StartTime.Format("Jan 02, 15:04"),
+			task.EndTime.Format("Jan 02, 15:04"), task.Body,
+		)
 	}
 
 	// The footer
