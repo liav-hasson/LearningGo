@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/liav-hasson/learning-code/learning_go/http-server/internal"
+	"github.com/liav-hasson/learning-code/go/http-server/internal"
 )
 
 func main() {
